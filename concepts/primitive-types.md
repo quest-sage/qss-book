@@ -17,23 +17,15 @@ This is a list of all the primitive data types in QSS.
 | `Stat` |  An `Int` that keeps track of how it has changed over time. This is deprecated and will be removed from the language soon! |
 | `Texture` | An image that can be assigned to entities on the tabletop to control how they look. |
 
-### Large Ints
+Here is a bit more information about certain types.
+
+### Int
 
 You can use underscores in `Int` literals to increase legibility. For example, the number $$10^9$$ could be written `1_000_000_000`.
 
-### Text and String
+When dividing integers, the result will be a `Ratio`. For example, `1 / 2` is the ratio one-half. To convert this back to an integer, you will need to round it using a specific rounding rule. See the Ratio section for more info.
 
-When possible, use `Text` instead of `String`. This allows for much greater flexibility in how the text can be displayed on the user's screen, and it opens up your script to be translated into other languages. However, when users input text, they only input it in their own language, so we are forced to use a raw `String` here. The best ways to use these data types will be covered in later articles all about `Text`.
-
-### Using Pos
-
-It is not recommended to directly set the `x` and `y` coordinates of a `Pos`, because this will have different outcomes on square and hexagonal grids. There are functions designed to help with simple tasks that consider the grid type - or at least, there will be once I make them!
-
-### Floating Point Computation
-
-There is no floating-point data type, only exact fractional data types. This means that we have to do away with such mathematical concepts as logarithms, fractional powers, square roots, and even constants such as $$\pi$$. As of now, this has not become a problem, but if we end up hitting roadblocks due to the absence of imprecise types, we may add one.
-
-### Boolean Logic
+### Bool
 
 You can manipulate `Bool` values using the familiar logic operators `not`, `and`, `or`. For example:
 
@@ -44,4 +36,24 @@ let c = a and b;
 let d = not c;
 let e = (a or d) and (not c);
 ```
+
+### Text and String
+
+When possible, use `Text` instead of `String`. This allows for much greater flexibility in how the text can be displayed on the user's screen, and it opens up your script to be translated into other languages. However, when users input text, they only input it in their own language, so we are forced to use a raw `String` here. The best ways to use these data types will be covered in later articles all about `Text`.
+
+### Ratio
+
+Ratios are created using the `/` operator. The numerator and denominator of a ratio are automatically simplified after each computation. For example, evaluating `4 / 16` results in the ratio `1/4`. The denominator is always a positive number.
+
+The numerator and denominator are both limited to the size of an `Int`.
+
+Infinite values are represented with the ratios `1/0` and `-1/0`. Dividing any ratio by zero results in one of these values - if the ratio is positive or zero it will result in `1/0`, otherwise `-1/0`.
+
+### Pos
+
+It is not recommended to directly set the `x` and `y` coordinates of a `Pos`, because this will have different outcomes on square and hexagonal grids. There are functions designed to help with simple tasks that consider the grid type - or at least, there will be once I make them!
+
+### Floating Point Computation
+
+There is no floating-point data type, only exact fractional data types. This means that we have to do away with such mathematical concepts as logarithms, fractional powers, square roots, and even constants such as $$\pi$$. As of now, this has not become a problem, but if we end up hitting roadblocks due to the absence of imprecise types, we may add one.
 

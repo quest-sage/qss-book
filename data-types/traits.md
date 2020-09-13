@@ -65,6 +65,10 @@ let centipede = new Centipede { leg_pairs = 38; };
 centipede.amount_of_legs().print();  // prints 76
 ```
 
+{% hint style="info" %}
+To use a trait function on a data type, make sure that both the trait and the impl for that type are in scope.
+{% endhint %}
+
 ## Debug Trait
 
 Here is some code from the `std::debug` package.
