@@ -1,7 +1,3 @@
----
-description: An introduction to the QSS programming language.
----
-
 # Overview
 
 QSS, the Quest Sage scripting language, is a domain-specific programming language \(DSL\) designed to enable dynamic scripting in the Quest Sage virtual tabletop. This manual to QSS assumes some level of familiarity with programming in general.
@@ -31,6 +27,10 @@ QSS functions don't have to execute all at once: for example, they can wait for 
 One of the consequences of having such dynamic code that can be changed with hooks is that there is an increased need to know exactly what types of variables functions are allowed to input and output. You can't just go to the source code of the function to see, because other people could just hook into the function and return their own data!
 
 QSS therefore has a 'strongly typed' system that makes the language more reminiscent of Java, Rust or Haskell as opposed to something like Python or PHP.
+
+### Function Purity
+
+Analogous to `final` in Java or `const` in C++, QSS supports a variety of function "purity levels", which control what code can be called from where. Functions marked `pure`, for example, have no effect on board state and can therefore be called by one client without synchronisation with others. This allows the QSS compiler to ensure at compile time that the Quest Sage board state will never desynchronise between clients, no matter what functions are called.
 
 ### Internationalisation
 
