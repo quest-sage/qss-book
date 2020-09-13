@@ -21,7 +21,11 @@ after func spawn_entity() -> Entity {
 
 If you're familiar with Java, the first few lines may look similar to Java code. You start by defining a `package`, which is basically the folder the code is stored in.
 
-Then follows a list of imports, which tell the compiler what other bits of code you want to use in your program. In our case, we import `std::entity` and `std::debug`. Whenever you want to use code from a package in your program, you'll need to import the package.
+Then follows a list of imports, which tell the compiler what other bits of code you want to use in your program. In our case, we import `std::entity` and `std::debug`.
+
+{% hint style="info" %}
+Whenever you want to use code from another package in your program, you need to import the package.
+{% endhint %}
 
 Lines 6-8 demonstrate a core feature of QSS, hooks. We will go more in detail later, but for now all you need to know is that the code between the two brace brackets `{ }` is run every time a new entity is spawned on the tabletop. This just gives us an easy way of running your code when we're in the tabletop.
 
