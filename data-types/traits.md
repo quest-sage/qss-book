@@ -171,3 +171,13 @@ func get_most_legs(left: Any Animal, right: Any Animal) -> Any Animal {
 
 Because this code works no matter what kind of `Animal` we have, the type of each parameter is `Any Animal`.
 
+## impl Rules
+
+You can `impl` a trait for pretty much any concrete type in QSS. Here is a list of types you cannot implement a trait for:
+
+* an `Any` value
+* a `Func`
+* a `Maybe`, `List` or `Map` containing a forbidden type
+
+These rules ensure that there is only one valid implementation of a trait for any given data type.
+
