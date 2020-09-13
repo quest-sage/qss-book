@@ -22,6 +22,8 @@
 ## Data Types
 
 * [List and Map](data-types/list-and-map.md)
+* [Structs](data-types/structs.md)
+* [Traits](data-types/traits.md)
 
 ---
 
