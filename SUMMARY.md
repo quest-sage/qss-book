@@ -4,9 +4,22 @@
 * [Getting Started](getting-started.md)
 * [Hello, World!](hello-world.md)
 
-## Common Concepts <a id="types"></a>
+## Common Concepts <a id="concepts"></a>
 
-* [Comments](types/comments.md)
-* [Primitive Types](types/primitive-types.md)
-* [Maybe and Null](types/maybe-and-null.md)
+* [Comments](concepts/comments.md)
+* [Let Statements](concepts/let-statements.md)
+* [Primitive Types](concepts/primitive-types.md)
+* [Maybe and Null](concepts/maybe-and-null.md)
+* [Control Flow](concepts/control-flow.md)
+
+## Functions <a id="funcs"></a>
+
+* [Functions](funcs/functions.md)
+* [Receiver Style](funcs/receiver-style.md)
+* [Hooks](funcs/hooks.md)
+* [Purity](funcs/purity.md)
+
+---
+
+* [Hooking Variables](hooking-variables.md)
 
