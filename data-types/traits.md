@@ -159,6 +159,37 @@ impl IntoList for Int {
 }
 ```
 
+## This in Argument Position
+
+If you use `This` in an argument other than the first, you will not be able to use the function in a generic context. Take this hypothetical code as an example.
+
+```text
+trait T {
+    func t(this: This, other: This)
+}
+
+impl T for Int {
+    // --snip--
+}
+
+impl T for String {
+    // --snip--
+}
+
+func do_stuff() {
+    let a: Any T;
+    let b: Any T;
+    a = 123;
+    b = "abc";
+    
+    a.t(b);  // <- broken
+}
+```
+
+Line 19 is annotated "broken", because there was no matching implementation for the function call. Calling `a.t(b)` requires an implementation for `t(Int, String)` which is impossible. Therefore, functions of that type cannot be called where `This` is an `Any` type.
+
+Of course, you can still call functions like `1.t(2)` where you are using concrete types, as type safety can be guaranteed at compile time.
+
 ## The Any Type
 
 You can create functions that take in any implementation of a trait. Continuing with the animal example, let's make a function that takes in two animals and works out which animal has more legs.
