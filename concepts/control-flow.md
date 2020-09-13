@@ -55,8 +55,8 @@ You can iterate over each element in a `List` by using a `for` loop.
 
 ```text
 // Prints the numbers from 1 to 10
-// 1..11 is a list from 1 (inclusive) to 11 (exclusive)
-for i in 1..11 {
+// 1 to 11 is a list from 1 (inclusive) to 11 (exclusive)
+for i in 1 to 11 {
     i.print();
 }
 ```

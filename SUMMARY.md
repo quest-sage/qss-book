@@ -19,6 +19,10 @@
 * [Hooks](funcs/hooks.md)
 * [Purity](funcs/purity.md)
 
+## Data Types
+
+* [List and Map](data-types/list-and-map.md)
+
 ---
 
 * [Hooking Variables](hooking-variables.md)
